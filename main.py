@@ -11,15 +11,11 @@ def main():
     load_dotenv()
     api_key = os.environ.get("GEMINI_API_KEY")
     client = genai.Client(api_key=api_key)
-
     verbose = "--verbose" in sys.argv
-    
     if len(sys.argv) < 2:
         print(f"at least 1 more character needed")
         sys.exit(1)
-    
     user_prompt= sys.argv[1]
-    
     messages = [
         types.Content(role="user", parts=[types.Part(text=user_prompt)])
     ]
