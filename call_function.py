@@ -9,6 +9,8 @@ from functions.get_files_info import schema_get_files_info
 from functions.run_python import schema_run_python_file
 from functions.write_file import schema_write_file
 
+from config import WORKING_DIR
+
 
 available_functions = types.Tool(
     function_declarations=[
@@ -44,7 +46,7 @@ def call_function(function_call_part, verbose=False):
     ],
 )
     args = dict(function_call_part.args)
-    args["working_directory"] = "./calculator" 
+    args["working_directory"] = WORKING_DIR 
     function_result = functions_map[function_name](**args)
     return types.Content(
         role="tool",
