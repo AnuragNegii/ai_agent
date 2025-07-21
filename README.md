@@ -1,0 +1,1 @@
+used googles genai for creating an ai_agent which can look in a certain directory provided by you and read and edit files in it. you can also give it a personality according to your need
